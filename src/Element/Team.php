@@ -165,7 +165,7 @@ class Team extends BaseElement
     protected function provideBlockSchema()
     {
         $blockSchema = parent::provideBlockSchema();
-        $blockSchema['content'] = 'Team Section';
+        $blockSchema['content'] = _t(__CLASS__ . '.BLOCKSCHEMADESCRIPTION', 'Contains {memberCount} Members', ['memberCount' => $this->TeamMembers()->count()]);
         return $blockSchema;
     }
 

@@ -1,3 +1,9 @@
 de:
   Syntro\SilverstripeElementalTeam\Element\Team:
     BlockType: Team
+    BLOCKSCHEMADESCRIPTION: Enthält {memberCount} Personen
+  Syntro\SilverstripeElementalTeam\Model\TeamMember:
+    NAMETITLE: Name
+    PORTRAITTITLE: Portrait
+    POSITIONTITLE: Position
+    DESCRIPTIONTTITLE: Beschreibung

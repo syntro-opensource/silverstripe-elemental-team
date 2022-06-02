@@ -65,12 +65,12 @@ class TeamMember extends BaseItem
         $fields->removeByName([
             'SectionID'
         ]);
-        $fields->fieldByName('Root.Main.Title')->setTitle('Name');
+        $fields->fieldByName('Root.Main.Title')->setTitle(_t(__CLASS__ . '.NAMETITLE', 'Name'));
         $fields->addFieldToTab(
             'Root.Main',
             $portraitField = UploadField::create(
                 'Portrait',
-                'Portrait'
+                _t(__CLASS__ . '.PORTRAITTITLE', 'Portrait')
             ),
             'Title'
         );
@@ -79,11 +79,11 @@ class TeamMember extends BaseItem
             [
                 $positionField = TextField::create(
                     'Position',
-                    'Position'
+                    _t(__CLASS__ . '.POSITIONTITLE', 'Position')
                 ),
                 $descriptionField = TextareaField::create(
                     'Description',
-                    'Description'
+                    _t(__CLASS__ . '.DESCRIPTIONTTITLE', 'Description')
                 ),
             ]
         );
