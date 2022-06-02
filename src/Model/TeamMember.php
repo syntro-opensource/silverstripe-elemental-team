@@ -6,6 +6,7 @@ use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
+use SilverStripe\Forms\FieldList;
 use Syntro\SilverStripeElementalBaseitem\Model\BaseItem;
 use Syntro\SilverstripeElementalTeam\Element\Team;
 
@@ -22,6 +23,10 @@ class TeamMember extends BaseItem
      */
     private static $displays_title_in_template = false;
 
+    /**
+     * @config
+     * @var array
+     */
     private static $db = [
         'Position' => 'Varchar',
         'Description' => 'Text'
@@ -48,6 +53,7 @@ class TeamMember extends BaseItem
     /**
      * Defines summary fields commonly used in table columns
      * as a quick overview of the data for this dataobject
+     * @config
      * @var array
      */
     private static $summary_fields = [
