@@ -8,6 +8,7 @@ use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\FieldGroup;
+use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Assets\File;
 use SilverStripe\ORM\ValidationResult;
@@ -105,6 +106,7 @@ class Team extends BaseElement
 
     /**
      * Has_many relationship
+     * @config
      * @var array
      */
     private static $has_many = [
@@ -165,7 +167,7 @@ class Team extends BaseElement
     protected function provideBlockSchema()
     {
         $blockSchema = parent::provideBlockSchema();
-        $blockSchema['content'] = 'Team Section';
+        $blockSchema['content'] = _t(__CLASS__ . '.BLOCKSCHEMADESCRIPTION', 'Contains {memberCount} Members', ['memberCount' => $this->TeamMembers()->count()]);
         return $blockSchema;
     }
 
@@ -179,5 +181,4 @@ class Team extends BaseElement
         $result = parent::validate();
         return $result;
     }
-
 }

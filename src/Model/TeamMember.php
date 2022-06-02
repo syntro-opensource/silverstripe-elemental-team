@@ -6,6 +6,7 @@ use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
+use SilverStripe\Forms\FieldList;
 use Syntro\SilverStripeElementalBaseitem\Model\BaseItem;
 use Syntro\SilverstripeElementalTeam\Element\Team;
 
@@ -22,6 +23,10 @@ class TeamMember extends BaseItem
      */
     private static $displays_title_in_template = false;
 
+    /**
+     * @config
+     * @var array
+     */
     private static $db = [
         'Position' => 'Varchar',
         'Description' => 'Text'
@@ -48,6 +53,7 @@ class TeamMember extends BaseItem
     /**
      * Defines summary fields commonly used in table columns
      * as a quick overview of the data for this dataobject
+     * @config
      * @var array
      */
     private static $summary_fields = [
@@ -65,12 +71,12 @@ class TeamMember extends BaseItem
         $fields->removeByName([
             'SectionID'
         ]);
-        $fields->fieldByName('Root.Main.Title')->setTitle('Name');
+        $fields->fieldByName('Root.Main.Title')->setTitle(_t(__CLASS__ . '.NAMETITLE', 'Name'));
         $fields->addFieldToTab(
             'Root.Main',
             $portraitField = UploadField::create(
                 'Portrait',
-                'Portrait'
+                _t(__CLASS__ . '.PORTRAITTITLE', 'Portrait')
             ),
             'Title'
         );
@@ -79,11 +85,11 @@ class TeamMember extends BaseItem
             [
                 $positionField = TextField::create(
                     'Position',
-                    'Position'
+                    _t(__CLASS__ . '.POSITIONTITLE', 'Position')
                 ),
                 $descriptionField = TextareaField::create(
                     'Description',
-                    'Description'
+                    _t(__CLASS__ . '.DESCRIPTIONTTITLE', 'Description')
                 ),
             ]
         );
