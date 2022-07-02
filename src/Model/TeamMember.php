@@ -17,6 +17,13 @@ use Syntro\SilverstripeElementalTeam\Element\Team;
 class TeamMember extends BaseItem
 {
     /**
+     * Defines the database table name
+     * @config
+     * @var string
+     */
+    private static $table_name = 'ElementTeamTeamMember';
+
+    /**
      * We do not allow the title (Name to be toggled)
      * @config
      * @var bool
