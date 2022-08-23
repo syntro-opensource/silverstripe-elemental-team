@@ -9,4 +9,29 @@
 
 Provides a team block for including a team.
 
-> In the process of being created
+
+
+## Introduction
+Template repository for a Silverstripe Module.
+
+## Installation
+
+To install this module, run the following command:
+```
+composer require syntro/silverstripe-elemental-team
+```
+
+
+## Features
+This module features a block for the elemental editor which is intended to render
+a team-section.
+
+Each team-member can be created with a portrait, a name, a position and a short
+description.
+
+## Documentation
+
+### Custom Styling
+to render this block the way you want, create a
+`templates/Syntro/SilverstripeElementalTeam/Element/Team.ss`
+file.
