@@ -10,10 +10,6 @@
 Provides a team block for including a team.
 
 
-
-## Introduction
-Template repository for a Silverstripe Module.
-
 ## Installation
 
 To install this module, run the following command:
